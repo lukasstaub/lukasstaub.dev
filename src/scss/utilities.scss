@@ -1,0 +1,110 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+    color: var(--element-color);
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    padding: 70px 10% 0;
+    background-color: var(--bg-color);
+}
+
+a {
+    color: var(--link-color);
+}
+
+button,
+.btn {
+    background-color: var(--hover-bg);
+    color: var(--bg-color);
+    border-radius: 8px;
+    padding: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 150px;
+    text-align: center;
+    font-size: 18px;
+    border: none;
+}
+
+input,
+textarea {
+    background-color: var(--hover-bg);
+    border-radius: 8px;
+    padding: 12px;
+    width: 300px;
+    font-size: 18px;
+    color: var(--bg-color);
+    border: none;
+    resize: none;
+
+    &::placeholder {
+        color: var(--bg-color);
+    }
+}
+
+ul,
+ol {
+    margin-left: 24px;
+}
+
+.desktop-hidden {
+    display: none;
+}
+
+.brand-icon {
+    color: var(--bg-color);
+    margin-right: 8px;
+}
+
+blockquote {
+    display: block;
+    background: var(--bg-color);
+    padding: 6px 20px 0px 55px;
+    margin: 0 0 20px;
+    min-height: 60px;
+    position: relative;
+
+    /*Font*/
+    font-family: Georgia, serif;
+    font-size: 16px;
+    color: #666;
+    text-align: justify;
+
+    border-left: 12px solid var(--hover-bg);
+
+    &::before {
+        content: "\201C"; /*Unicode for Left Double Quote*/
+
+        /*Font*/
+        font-family: Georgia, serif;
+        font-size: 60px;
+        font-weight: bold;
+        color: #999;
+
+        /*Positioning*/
+        position: absolute;
+        left: 10px;
+        top: 0;
+    }
+
+    &::after {
+        /*Reset to make sure*/
+        content: "";
+    }
+
+    * {
+        margin: 0 !important;
+    }
+}

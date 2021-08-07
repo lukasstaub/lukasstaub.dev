@@ -1,0 +1,27 @@
+.projects-container {
+    flex: 1;
+
+    > div {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-columns: auto;
+        padding: 24px 0;
+        gap: 48px;
+
+        > div {
+            margin: 0 auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .projects-container > div {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+
+        > div {
+            width: 100%;
+        }
+    }
+}

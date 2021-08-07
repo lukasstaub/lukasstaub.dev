@@ -1,0 +1,9 @@
+<main class="links-container">
+    <% links.map((link) => { %>
+    <a href="<%= link.url %>" class="btn">
+        <% if(link.icon) { %>
+        <i class="fab <%= link.icon %> brand-icon"></i>
+        <% } %> <%= link.label %>
+    </a>
+    <% }); %>
+</main>

@@ -1,0 +1,19 @@
+<main class="projects-container">
+    <% if(projects.length > 0) { %>
+    <div>
+        <% projects.map((project) => { %>
+        <div class="project-card">
+            <img src="<%= project.image_url %>" alt="project-logo" />
+            <div>
+                <h1><%= project.name %></h1>
+                <a href="/projects/<%= project.slug %>" class="btn-link"><%= i18n.generic_read_more %></a>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+    <% } else { %>
+    <div>
+        <p><%= i18n.procects_not_found %></p>
+    </div>
+    <% } %>
+</main>

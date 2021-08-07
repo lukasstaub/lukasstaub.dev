@@ -1,0 +1,74 @@
+<main class="home-content">
+    <div class="home-inner-top">
+        <section class="message">
+            <p class="top"><%= i18n.home_top %></p>
+            <p class="big"><%= i18n.home_middle %></p>
+            <p class="bottom">
+                <%= i18n.home_bottom_one %>
+                <br />
+                <%= i18n.home_bottom_two %>
+            </p>
+        </section>
+        <section>
+            <img src="/assets/front-asset.svg" alt="hero-asset" />
+        </section>
+        <section>
+            <a href="#bottom">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </section>
+    </div>
+
+    <section id="bottom" class="card-container">
+        <div>
+            <h1><%= i18n.home_latest_projects %></h1>
+            <a href="/projects" class="btn-link"><%= i18n.generic_view_all %></a>
+        </div>
+        <% if(projects.length > 0) { %>
+        <div>
+            <% projects.map((project) => { %>
+            <div class="project-card">
+                <img src="<%= project.image_url %>" alt="project-logo" />
+                <div>
+                    <h1><%= project.name %></h1>
+                    <a href="/projects/<%= project.slug %>" class="btn-link"><%= i18n.generic_read_more %></a>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+
+        <% } else { %>
+        <div>
+            <p><%= i18n.generic_nothing_to_see %></p>
+        </div>
+        <% } %>
+    </section>
+
+    <section class="card-container blog">
+        <div>
+            <h1><%= i18n.home_latest_blogposts %></h1>
+            <a href="https://blog.lukasstaub.dev" target="_blank" class="btn-link"><%= i18n.generic_view_all %></a>
+        </div>
+
+        <% if(blogPosts.length > 0) { %>
+        <div>
+            <% blogPosts.map((blog) => { const date = new Date(blog.published_at) %>
+            <div class="blog-card">
+                <div class="blog-card">
+                    <h2><%= blog.title %></h2>
+                    <hr />
+                    <div class="preview"><%- blog.body %></div>
+                    <div class="actions">
+                        <a class="btn-link" href="https://blog.lukasstaub.dev/<%= date.getFullYear() %>/<%= date.getMonth() + 1 > 9 ? date.getMonth() + 1 : `0${date.getMonth() + 1}` %>/<%= date.getDate() > 9 ? date.getDate() : `0${date.getDate()}` %>/<%= blog.slug %>" target="_blank"> <%= i18n.generic_read_more %> </a>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+        <% } else { %>
+        <div>
+            <p><%= i18n.generic_nothing_to_see %></p>
+        </div>
+        <% } %>
+    </section>
+</main>
