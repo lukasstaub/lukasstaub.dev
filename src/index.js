@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const nodemailer = require("nodemailer");
 const Turndown = require("turndown");
-const { markdown } = require("markdown");
+const marked = require("marked");
 
 const knex = require("./config/knex");
 
@@ -10,8 +10,8 @@ const web = Router();
 web.get("/", async (req, res) => {
     const service = new Turndown();
     function shorten(body) {
-        const strLength = 350;
-        return markdown.toHTML(service.turndown(body).substring(0, strLength) + "...");
+        const strLength = 450;
+        return marked.parse(service.turndown(body).substring(0, strLength) + "...");
     }
 
     const projects = await knex("projects").orderBy("timestamp", "desc").limit(4);
