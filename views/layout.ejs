@@ -12,6 +12,7 @@
         <link href="/css/index.css" rel="stylesheet" />
         <link rel="icon" href="/assets/favicon.ico" />
         <script src="/js/menu.js" defer></script>
+        <script type="module" src="/js/analytics.js"></script>
         <title>lukasstaub.dev - <%= title %></title>
         <meta charset="utf-8" />
     </head>
@@ -24,7 +25,7 @@
                 <a href="/contact"><%= i18n.nav_contact %></a>
                 <a href="/projects"><%= i18n.nav_projects %></a>
                 <a href="/links"><%= i18n.nav_links %></a>
-                <a href="https://blog.lukasstaub.dev" target="_blank"><%= i18n.nav_blog %></a>
+                <% if(false) { //TODO: think about re-implementation! %><a href="https://blog.lukasstaub.dev" target="_blank"><%= i18n.nav_blog %></a><% } %>
             </section>
 
             <i id="show-menu" class="fas fa-bars desktop-hidden hamburger-btn"></i>

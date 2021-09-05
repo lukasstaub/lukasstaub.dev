@@ -53,7 +53,7 @@ app.use(async (req, _, next) => {
 });
 
 app.use((req, res, next) => {
-    if (req.config.main_maintenance) return res.render("servicing", { i18n: req.i18n });
+    if (req.config.main_maintenance && process.env.NODE_ENV === "production") return res.render("servicing", { i18n: req.i18n });
 
     return next();
 });
@@ -73,7 +73,6 @@ app.use(async (req, _, next) => {
         await knex("access_logs").insert({
             user_agent: req.headers["user-agent"],
             page_name: process.env.PAGE_NAME,
-            requested_resource: req.path,
             method: req.method,
         });
     }
