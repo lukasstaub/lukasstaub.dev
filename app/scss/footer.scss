@@ -1,0 +1,20 @@
+footer {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    section > * {
+        margin-left: 12px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    footer {
+        justify-content: center;
+
+        section {
+            display: none;
+        }
+    }
+}

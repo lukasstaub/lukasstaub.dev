@@ -1,0 +1,51 @@
+.contact-container {
+    flex: 1;
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+
+    input,
+    textarea {
+        width: 70%;
+        margin: 12px auto;
+    }
+
+    textarea {
+        height: 500px;
+    }
+
+    button {
+        margin-left: auto;
+        margin-right: 15%;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    .contact-container {
+        input,
+        textarea {
+            width: 90%;
+            margin: 12px auto;
+        }
+
+        button {
+            margin-right: 5%;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .contact-container {
+        padding-top: 24px;
+
+        input,
+        textarea {
+            width: 100%;
+            margin: 12px auto;
+        }
+
+        button {
+            margin-right: 0;
+        }
+    }
+}

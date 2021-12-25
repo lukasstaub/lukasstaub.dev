@@ -1,0 +1,26 @@
+.project-container {
+    flex: 1;
+    padding-top: 36px;
+    margin: 0 auto;
+    max-width: 1200px;
+
+    > hr {
+        margin: 24px 0;
+    }
+
+    p:last-of-type {
+        color: var(--light-gray);
+        margin-top: 48px;
+    }
+
+    .contents {
+        width: 100%;
+        overflow-x: hidden;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .project-container {
+        width: 100%;
+    }
+}
