@@ -8,8 +8,8 @@ function AboutPage() {
                 <h2>This page has been designed with love by Lukas Staub in Germany.</h2>
                 <b>
                     Powered by{" "}
-                    <a href="https://www.control-webpanel.com" target="_blank">
-                        CWP7
+                    <a href="https://www.vercel.com" target="_blank">
+                        Vercel
                     </a>
                 </b>
                 <br />

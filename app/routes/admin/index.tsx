@@ -1,26 +1,11 @@
+import { useContext } from "react";
 import { Links, LinksFunction } from "remix";
-import tailwindUrl from "../../css/tailwind.css";
-
-export const links: LinksFunction = () => {
-    return [
-        {
-            rel: "stylesheet",
-            href: tailwindUrl,
-        },
-    ];
-};
+import { AuthContext } from "../admin";
 
 function Admin() {
-    return (
-        <html>
-            <head>
-                <Links />
-            </head>
-            <body>
-                <main className="bg-green-500">Hello world!</main>
-            </body>
-        </html>
-    );
+    const context = useContext(AuthContext);
+
+    return <main className="">Hello world!</main>;
 }
 
 export default Admin;

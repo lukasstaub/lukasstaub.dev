@@ -56,10 +56,8 @@ export default function App() {
         setMenuShown((state) => !state);
     };
 
-    return admin ? (
-        <Outlet />
-    ) : (
-        <html lang={lang.lang}>
+    return (
+        <html lang={lang.lang} className="h-full w-full">
             <head>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -67,49 +65,59 @@ export default function App() {
                 <Meta />
                 <Links />
 
-                <link rel="stylesheet" href={stylesUrl} />
-                <link rel="stylesheet" href={contentStylesUrl} />
+                {!admin && (
+                    <>
+                        <link rel="stylesheet" href={stylesUrl} />
+                        <link rel="stylesheet" href={contentStylesUrl} />
+                    </>
+                )}
             </head>
-            <body>
-                <header>
-                    <Link to="/" className="page-title">
-                        lukasstaub.dev
-                    </Link>
-
-                    <section className="mobile-hidden">
-                        <Link to="/about">{lang.nav_about}</Link>
-                        <Link to="/contact">{lang.nav_contact}</Link>
-                        <Link to="/projects">{lang.nav_projects}</Link>
-                        <Link to="/links">{lang.nav_links}</Link>
-                    </section>
-
-                    {!menuShown ? <i onClick={toggleMenu} id="show-menu" className="fas fa-bars desktop-hidden hamburger-btn"></i> : <i onClick={toggleMenu} id="close-menu" className="fas fa-times hamburger-btn"></i>}
-                </header>
-                <div className="content">
+            <body className="h-full w-full">
+                {admin ? (
                     <Outlet />
-                </div>
-                <footer>
-                    <p>Copyright &copy;{new Date().getFullYear()} Lukas Staub.</p>
-                    <section>
-                        <a href="/admin">{lang.footer_login}</a>
-                        <Link to="/about-page">{lang.footer_page_resources}</Link>
-                    </section>
-                </footer>
+                ) : (
+                    <>
+                        <header>
+                            <Link to="/" className="page-title">
+                                lukasstaub.dev
+                            </Link>
 
-                <div className={`mobile-menu ${menuShown ? "shown" : null}`} id="mobile-menu">
-                    <Link className="btn" to="/about" onClick={toggleMenu}>
-                        {lang.nav_about}
-                    </Link>
-                    <Link className="btn" to="/contact" onClick={toggleMenu}>
-                        {lang.nav_contact}
-                    </Link>
-                    <Link className="btn" to="/projects" onClick={toggleMenu}>
-                        {lang.nav_projects}
-                    </Link>
-                    <Link className="btn" to="/links" onClick={toggleMenu}>
-                        {lang.nav_links}
-                    </Link>
-                </div>
+                            <section className="mobile-hidden">
+                                <Link to="/about">{lang.nav_about}</Link>
+                                <Link to="/contact">{lang.nav_contact}</Link>
+                                <Link to="/projects">{lang.nav_projects}</Link>
+                                <Link to="/links">{lang.nav_links}</Link>
+                            </section>
+
+                            {!menuShown ? <i onClick={toggleMenu} id="show-menu" className="fas fa-bars desktop-hidden hamburger-btn"></i> : <i onClick={toggleMenu} id="close-menu" className="fas fa-times hamburger-btn"></i>}
+                        </header>
+                        <div className="content">
+                            <Outlet />
+                        </div>
+                        <footer>
+                            <p>Copyright &copy;{new Date().getFullYear()} Lukas Staub.</p>
+                            <section>
+                                <a href="/admin">{lang.footer_login}</a>
+                                <Link to="/about-page">{lang.footer_page_resources}</Link>
+                            </section>
+                        </footer>
+
+                        <div className={`mobile-menu ${menuShown ? "shown" : null}`} id="mobile-menu">
+                            <Link className="btn" to="/about" onClick={toggleMenu}>
+                                {lang.nav_about}
+                            </Link>
+                            <Link className="btn" to="/contact" onClick={toggleMenu}>
+                                {lang.nav_contact}
+                            </Link>
+                            <Link className="btn" to="/projects" onClick={toggleMenu}>
+                                {lang.nav_projects}
+                            </Link>
+                            <Link className="btn" to="/links" onClick={toggleMenu}>
+                                {lang.nav_links}
+                            </Link>
+                        </div>
+                    </>
+                )}
                 <ScrollRestoration />
                 <Scripts />
                 {process.env.NODE_ENV === "development" && <LiveReload />}

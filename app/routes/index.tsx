@@ -1,9 +1,8 @@
 import { projects } from "@prisma/client";
-import { useEffect } from "react";
 import { Link, LoaderFunction, MetaFunction, useLoaderData } from "remix";
-import client from "~/config/client";
-import getLang from "~/utils/getLang";
-import en from "~/utils/lang/en";
+import client from "../config/client";
+import getLang from "../utils/getLang";
+import en from "../utils/lang/en";
 
 export const meta: MetaFunction = ({ data }) => {
     return {
@@ -52,15 +51,15 @@ export default function Index() {
                 </div>
                 {projects.length > 0 ? (
                     <div>
-                        {projects.map((project: any) => {
+                        {projects.map((project) => {
                             return (
                                 <div key={project.slug} className="project-card">
                                     <img src={project.image_url} alt="project-logo" />
                                     <div>
                                         <h1>{project.name}</h1>
-                                        <a href="/projects/<%= project.slug %>" className="btn-link">
+                                        <Link to={`/projects/${project.slug}`} className="btn-link">
                                             {lang.generic_read_more}
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             );

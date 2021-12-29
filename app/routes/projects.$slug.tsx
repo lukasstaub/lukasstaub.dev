@@ -1,8 +1,8 @@
 import { projects } from "@prisma/client";
 import { json, LoaderFunction, MetaFunction, useLoaderData } from "remix";
-import client from "~/config/client";
-import getLang from "~/utils/getLang";
-import en from "~/utils/lang/en";
+import client from "../config/client";
+import getLang from "../utils/getLang";
+import en from "../utils/lang/en";
 
 export const meta: MetaFunction = ({ data }) => {
     return { title: data.project.name };

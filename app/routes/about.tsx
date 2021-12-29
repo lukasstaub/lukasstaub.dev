@@ -1,6 +1,6 @@
 import { LoaderFunction, MetaFunction, useLoaderData } from "remix";
-import getLang from "~/utils/getLang";
-import en from "~/utils/lang/en";
+import getLang from "../utils/getLang";
+import en from "../utils/lang/en";
 
 export const meta: MetaFunction = ({ data }) => {
     return {
