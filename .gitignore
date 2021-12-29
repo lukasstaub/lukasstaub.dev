@@ -1,7 +1,12 @@
-node_modules/
+node_modules
+
+.cache
+.vercel
+.output
 
 .env
 
-yarn.lock
+public/build
+api/_build
 
 .DS_Store
