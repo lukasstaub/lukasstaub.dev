@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 import { json, redirect } from "remix";
-import client from "../../config/client";
+import client from "../../config/client.server";
 
 export default async function (request: Request) {
     const formData = await request.formData();

@@ -30,7 +30,7 @@ function Authenticate() {
 
                 <input name="perform" value={Actions.AUTHENTICATE} style={{ display: "none" }} readOnly />
 
-                <button className={`bg-gray-600 ${loading ? "text-gray-400" : "text-white"} rounded-lg p-2 mt-4`} type="submit" disabled={loading}>
+                <button className={` ${loading ? "text-gray-400 bg-gray-600" : "text-white bg-teal-600"} rounded-lg p-2 mt-4`} type="submit" disabled={loading}>
                     {loading ? "Logging in..." : "Login"}
                 </button>
             </Form>

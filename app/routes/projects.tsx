@@ -1,6 +1,6 @@
 import { projects } from "@prisma/client";
 import { Link, LoaderFunction, MetaFunction, useLoaderData } from "remix";
-import client from "../config/client";
+import client from "../config/client.server";
 import getLang from "../utils/getLang";
 import en from "../utils/lang/en";
 

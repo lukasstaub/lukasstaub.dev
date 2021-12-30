@@ -1,6 +1,6 @@
 import { compare } from "bcrypt";
 import { json } from "remix";
-import client from "../../config/client";
+import client from "../../config/client.server";
 import { Actions } from "../actions";
 import { removeCookie, userAuth } from "../cookies";
 import { createAuthToken } from "../jwtHelpers";

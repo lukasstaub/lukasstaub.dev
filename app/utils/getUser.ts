@@ -1,5 +1,5 @@
 import { users } from "@prisma/client";
-import client from "../config/client";
+import client from "../config/client.server";
 import constants from "./constants";
 import { userAuth } from "./cookies";
 import { verifyToken, willExpireIn } from "./jwtHelpers";

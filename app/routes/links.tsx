@@ -1,6 +1,6 @@
 import { social_links } from "@prisma/client";
 import { LoaderFunction, MetaFunction, useLoaderData } from "remix";
-import client from "../config/client";
+import client from "../config/client.server";
 import getLang from "../utils/getLang";
 
 export const meta: MetaFunction = ({ data }) => {

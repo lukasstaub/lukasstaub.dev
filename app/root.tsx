@@ -7,12 +7,12 @@ import getLang from "./utils/getLang";
 import getUser, { returnType } from "./utils/getUser";
 import en from "./utils/lang/en";
 
-export const loader: LoaderFunction = ({ request }) => {
+export const loader: LoaderFunction = async ({ request }) => {
     const lang = getLang(request);
 
     const admin = request.url.includes("/admin");
 
-    const user = getUser(request);
+    const user = await getUser(request);
 
     return { lang, admin, user };
 };
@@ -100,7 +100,7 @@ export default function App() {
                         <footer>
                             <p>Copyright &copy;{new Date().getFullYear()} Lukas Staub.</p>
                             <section>
-                                <a href="/admin">{Boolean(user?.user) ? "Admin Panel" : lang.footer_login}</a>
+                                <a href="/admin">{Boolean(user?.user?.id) ? "Admin Panel" : lang.footer_login}</a>
                                 <Link to="/about-page">{lang.footer_page_resources}</Link>
                             </section>
                         </footer>
