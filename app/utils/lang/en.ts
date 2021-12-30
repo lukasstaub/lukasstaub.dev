@@ -53,7 +53,6 @@ export default {
 
     //contact
     contact_body: "Want do you want to tell me?",
-    contact_email_sent: (email: string) => `Thank you for getting in touch with me!\nI'll get back to you at ${email}.\nHave a nice day!`,
 
     //generic
     generic_name: "Name",

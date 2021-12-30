@@ -57,7 +57,6 @@ export default {
 
     //contact
     contact_body: "Was möchten Sie mir mitteilen?",
-    contact_email_sent: (email: string) => `Danke, dass Sie sich bei mir gemeldet haben!\nIch werde mich bei Ihnen unter ${email} melden.\nEinen schönen Tag Ihnen noch!`,
 
     //generic
     generic_name: "Name",

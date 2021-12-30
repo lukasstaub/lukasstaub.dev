@@ -44,19 +44,6 @@ function AdminLayout() {
     }
 
     useEffect(() => {
-        // if (userInfo?.resetToken || userInfo?.refreshOnClient) {
-        //     fetch("/admin", {
-        //         method: "POST",
-        //         body: JSON.stringify({
-        //             perform: userInfo?.resetToken ? Actions.RESET_TOKEN : Actions.REFRESH_TOKEN,
-        //             ...(userInfo.refreshOnClient ? { userId: userInfo.user.id } : {}),
-        //         }),
-        //         headers: {
-        //             "Content-Type": "multipart/form-data",
-        //         },
-        //     });
-        // }
-
         if (userInfo?.user) {
             setUser(userInfo.user);
         }

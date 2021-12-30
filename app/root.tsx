@@ -4,6 +4,7 @@ import { Link, Links, LinksFunction, LiveReload, LoaderFunction, Meta, Outlet, S
 import contentStylesUrl from "./css/content-styles.css";
 import stylesUrl from "./css/index.css";
 import getLang from "./utils/getLang";
+import getUser, { returnType } from "./utils/getUser";
 import en from "./utils/lang/en";
 
 export const loader: LoaderFunction = ({ request }) => {
@@ -11,7 +12,9 @@ export const loader: LoaderFunction = ({ request }) => {
 
     const admin = request.url.includes("/admin");
 
-    return { lang, admin };
+    const user = getUser(request);
+
+    return { lang, admin, user };
 };
 
 export const links: LinksFunction = () => {
@@ -48,7 +51,7 @@ export const links: LinksFunction = () => {
 };
 
 export default function App() {
-    const { lang, admin } = useLoaderData<{ lang: typeof en; admin: boolean }>();
+    const { lang, admin, user } = useLoaderData<{ lang: typeof en; admin: boolean; user: returnType }>();
 
     const [menuShown, setMenuShown] = useState(false);
 
@@ -97,7 +100,7 @@ export default function App() {
                         <footer>
                             <p>Copyright &copy;{new Date().getFullYear()} Lukas Staub.</p>
                             <section>
-                                <a href="/admin">{lang.footer_login}</a>
+                                <a href="/admin">{user ? "Admin Panel" : lang.footer_login}</a>
                                 <Link to="/about-page">{lang.footer_page_resources}</Link>
                             </section>
                         </footer>
