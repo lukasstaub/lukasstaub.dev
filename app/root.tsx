@@ -100,7 +100,7 @@ export default function App() {
                         <footer>
                             <p>Copyright &copy;{new Date().getFullYear()} Lukas Staub.</p>
                             <section>
-                                <a href="/admin">{user ? "Admin Panel" : lang.footer_login}</a>
+                                <a href="/admin">{Boolean(user?.user) ? "Admin Panel" : lang.footer_login}</a>
                                 <Link to="/about-page">{lang.footer_page_resources}</Link>
                             </section>
                         </footer>
