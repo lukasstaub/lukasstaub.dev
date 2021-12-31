@@ -138,6 +138,7 @@ export function CatchBoundary() {
                 <title>
                     {caught.status} - {caught.statusText}
                 </title>
+                <Meta />
                 <Links />
                 <link rel="stylesheet" href={stylesUrl} />
             </head>

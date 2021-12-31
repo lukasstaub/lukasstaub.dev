@@ -3,6 +3,8 @@ import { BackspaceIcon, CogIcon, CollectionIcon, FolderOpenIcon, HomeIcon, Logou
 import { AuthContext } from "../routes/admin";
 import SideBarElement from "./SideBarElement";
 
+import info from "../../info.json";
+
 function SideBar() {
     const context = useContext(AuthContext);
 
@@ -12,7 +14,7 @@ function SideBar() {
     }, [currenttime]);
 
     return (
-        <div className="w-[300px] bg-gray-200 flex flex-col">
+        <div className="w-[300px] flex-shrink-0 bg-gray-200 flex flex-col">
             <div className="p-2">
                 <p className="text-sm text-gray-500">{currenttime}</p>
                 <p className="text-lg">
@@ -42,6 +44,9 @@ function SideBar() {
                 </SideBarElement>
                 <SideBarElement icon={<LogoutIcon />} onClick={() => context.logout()}>
                     Logout
+                </SideBarElement>
+                <SideBarElement hover={false}>
+                    <p className="text-gray-600 text-sm">{info.version}</p>
                 </SideBarElement>
             </div>
         </div>

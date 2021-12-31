@@ -20,12 +20,14 @@ function NewMedia() {
     }, [actionData]);
 
     return (
-        <div className="w-full h-full flex justify-center items-center">
-            <Form className="flex flex-col w-[500px]" method="post" encType="multipart/form-data">
-                <h1 className="mb-16 text-4xl">Upload File</h1>
+        <div className="flex flex-col w-full h-full overflow-y-auto">
+            <div className="h-[100px] p-4 w-full flex items-end mb-4 bg-gray-100 justify-between">
+                <h1 className="text-4xl">Upload File</h1>
+            </div>
+            <Form className="flex items-center justify-between w-full p-4" method="post" encType="multipart/form-data">
                 <input type="file" name="file" disabled={loading} />
 
-                <div className="mt-16 w-full flex justify-end">
+                <div className="w-full flex justify-end">
                     {!loading && (
                         <Link to="/admin/media" className="bg-gray-600 text-white ml-4 p-2 text-lg rounded-md">
                             Cancel
