@@ -4,7 +4,7 @@ import ReactTooltip from "react-tooltip";
 import client, { urlFor } from "../config/client";
 import { Skill } from "../types";
 
-export default function ({ skills }: { skills: Skill[] }) {
+export default function Skills({ skills }: { skills: Skill[] }) {
   return (
     <>
       <Head>

@@ -3,7 +3,7 @@ import Head from "next/head";
 import client, { urlFor } from "../config/client";
 import { Project } from "../types";
 
-export default function ({ projects }: { projects: Project[] }) {
+export default function Projects({ projects }: { projects: Project[] }) {
   return (
     <>
       <Head>

@@ -4,7 +4,7 @@ import { SocialIcon } from "react-social-icons";
 import client from "../config/client";
 import { Link } from "../types";
 
-export default function ({ links }: { links: Link[] }) {
+export default function Links({ links }: { links: Link[] }) {
   return (
     <>
       <Head>

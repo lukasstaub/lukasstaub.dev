@@ -4,7 +4,7 @@ import { PortableText } from "@portabletext/react";
 import { Author } from "../types";
 import Head from "next/head";
 
-export default function ({ user }: { user: Author }) {
+export default function About({ user }: { user: Author }) {
   return (
     <>
       <Head>
