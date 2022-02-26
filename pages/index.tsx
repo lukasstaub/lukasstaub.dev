@@ -1,9 +1,7 @@
-import { FaChevronDown } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { Skill } from "../types";
 import Head from "next/head";
 
-export default function Home({ skills }: { skills: Skill[] }) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -16,7 +14,7 @@ export default function Home({ skills }: { skills: Skill[] }) {
               Hello,
             </motion.h2>
             <motion.h1 initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: "spring", stiffness: 500, duration: 0.5, delay: 0.5 }} className="text-3xl sm:text-5xl">
-              I'm Lukas!
+              I&apos;m Lukas!
             </motion.h1>
             <motion.h5 initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: "spring", stiffness: 500, duration: 0.5, delay: 1 }} className="text-xl sm:text-2xl text-gray-300">
               A UI/UX Designer and Web Developer from Germany.

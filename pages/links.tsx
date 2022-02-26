@@ -16,8 +16,8 @@ export default function Links({ links }: { links: Link[] }) {
           <div className="grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-16">
             {links.length > 0 ? (
               links.map((el) => (
-                <div className="m-auto flex flex-col items-center">
-                  <SocialIcon url={el.url} target="_blank" />
+                <div key={el.title} className="m-auto flex flex-col items-center">
+                  <SocialIcon url={el.url} target="_blank" rel="noreferrer" />
                   <p className="text-lg mt-4">{el.title}</p>
                 </div>
               ))

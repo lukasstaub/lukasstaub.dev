@@ -17,15 +17,13 @@ export default function Skills({ skills }: { skills: Skill[] }) {
             {skills.length > 0 ? (
               skills.map((el) => {
                 return (
-                  <>
-                    <div className="m-auto flex flex-col items-center" data-tip={el.desc ?? ""} data-for={el.title}>
-                      <div style={{ backgroundColor: el.color }} className="w-[90px] h-[90px] bg-color3 rounded-full flex items-center justify-center overflow-hidden">
-                        <img className="w-[65%] h-[65%]" src={urlFor(el.img).url()} alt={el.title} />
-                      </div>
-                      <p className="text-lg mt-4">{el.title}</p>
+                  <div key={el.title} className="m-auto flex flex-col items-center" data-tip={el.desc ?? ""} data-for={el.title}>
+                    <div style={{ backgroundColor: el.color }} className="w-[90px] h-[90px] bg-color3 rounded-full flex items-center justify-center overflow-hidden">
+                      <img className="w-[65%] h-[65%]" src={urlFor(el.img).url()} alt={el.title} />
                     </div>
+                    <p className="text-lg mt-4">{el.title}</p>
                     <ReactTooltip id={el.title} effect="solid" />
-                  </>
+                  </div>
                 );
               })
             ) : (
