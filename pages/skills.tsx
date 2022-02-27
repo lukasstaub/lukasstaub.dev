@@ -10,7 +10,7 @@ export default function Skills({ skills }: { skills: Skill[] }) {
       <Head>
         <title>lukasstaub - My Skills</title>
       </Head>
-      <div className="min-h-[100vh] pt-[150px] px-4">
+      <div className="min-h-[100vh] pt-[100px] lg:pt-[150px] px-4">
         <div className="container mx-auto">
           <h1 className="text-4xl mb-16">My Skills</h1>
           <div className="grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-16">

@@ -10,7 +10,7 @@ export default function Links({ links }: { links: Link[] }) {
       <Head>
         <title>lukasstaub - My Social Media</title>
       </Head>
-      <div className="min-h-[100vh] pt-[150px] px-4" id="skills">
+      <div className="min-h-[100vh] pt-[100px] lg:pt-[150px] px-4" id="skills">
         <div className="container mx-auto">
           <h1 className="text-4xl mb-16">My Social Media</h1>
           <div className="grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-16">

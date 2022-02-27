@@ -9,7 +9,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
       <Head>
         <title>lukasstaub - My Projects</title>
       </Head>
-      <div className="min-h-[100vh] pt-[150px] px-4">
+      <div className="min-h-[100vh] pt-[100px] lg:pt-[150px] px-4">
         <div className="container mx-auto">
           <h1 className="text-4xl mb-16">My Projects</h1>
           <div className="grid  lg:grid-cols-2 2xl:grid-cols-3 gap-16">
