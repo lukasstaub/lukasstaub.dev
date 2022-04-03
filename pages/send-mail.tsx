@@ -8,10 +8,10 @@ const SendMail = ({ status }: { status: any }) => {
       <p className="text-xl text-center">
         Thank you for contacting me.
         <br />
-        I'll get back to you as soon as I can ;)
+        I&apos;ll get back to you as soon as I can ;)
       </p>
 
-      <Link href="/">
+      <Link href="/" passHref>
         <button className="text-color4 text-xl bg-color2 rounded-lg p-3 my-4 text-center mt-12">Home</button>
       </Link>
     </div>
@@ -23,6 +23,10 @@ const SendMail = ({ status }: { status: any }) => {
         <br />
         (HTTP Status: {status})
       </p>
+
+      <Link href="/" passHref>
+        <button className="text-color4 text-xl bg-color2 rounded-lg p-3 my-4 text-center mt-12">Home</button>
+      </Link>
     </div>
   );
 };
