@@ -31,7 +31,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       fields: { name, email, subject, msg },
     } = await parseFormData(req);
 
-    if (!name || !email || !subject || !msg) throw new Error();
+    if (!name || !email || !subject || !msg) {
+      return res.redirect("/send-mail?status=400");
+    }
 
     let transporter = nodemailer.createTransport({
       host: process.env.NEXT_MAIL_HOST,
