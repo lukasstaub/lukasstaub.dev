@@ -40,16 +40,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       port: 465,
       secure: true, // true for 465, false for other ports
       auth: {
-        user: process.env.NEXT_MAIL_FROM, // generated ethereal user
+        user: process.env.NEXT_MAIL_USER, // generated ethereal user
         pass: process.env.NEXT_MAIL_PW, // generated ethereal password
       },
     });
 
     // send mail with defined transport object
     let info = await transporter.sendMail({
-      from: '"lukasstaub.dev" <' + process.env.NEXT_MAIL_FROM + ">", // sender address
+      from: '"lukasstaub.xyz" <' + process.env.NEXT_MAIL_FROM + ">", // sender address
       to: process.env.NEXT_MAIL_TO, // list of receivers
-      subject: `New message from lukasstaub.dev: ${subject} - ${name}`, // Subject line
+      subject: `New message from lukasstaub.xyz: ${subject} - ${name}`, // Subject line
       text: `${msg}\n\nFrom: ${name} (${email})`, // plain text body
     });
 
