@@ -55,6 +55,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     return res.redirect("/send-mail?status=200");
   } catch (e) {
+    console.error(e);
     return res.redirect("/send-mail?status=500");
   }
 }
