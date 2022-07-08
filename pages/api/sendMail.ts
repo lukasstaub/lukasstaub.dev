@@ -37,8 +37,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     let transporter = nodemailer.createTransport({
       host: process.env.NEXT_MAIL_HOST,
-      port: process.env.NEXT_MAIL_PORT,
-      secure: process.env.NEXT_MAIL_SECURE, // true for 465, false for other ports
+      port: 465,
+      secure: true, // true for 465, false for other ports
       auth: {
         user: process.env.NEXT_MAIL_FROM, // generated ethereal user
         pass: process.env.NEXT_MAIL_PW, // generated ethereal password
