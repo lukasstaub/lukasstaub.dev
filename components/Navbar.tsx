@@ -18,8 +18,15 @@ const Navbar: React.FC = () => {
       </nav>
       <AnimatePresence>
         {shown && (
-          <motion.div className="backdrop-blur-lg fixed right-0 top-0 bottom-0 z-20 flex flex-col justify-between items-center py-28 lg:py-48" style={{ width: "max(min(425px, 100%), 35%)" }} animate={{ translateX: 0 }} initial={{ translateX: "100%" }} exit={{ translateX: "100%" }} transition={{ type: "tween" }}>
-            {["About", "Contact", "Projects", "Skills", "Links" /*, "Blogs"*/].map((el, index) => (
+          <motion.div
+            className="backdrop-blur-lg fixed right-0 top-0 bottom-0 z-20 flex flex-col justify-between items-center py-28 lg:py-48"
+            style={{ width: "max(min(425px, 100%), 35%)" }}
+            animate={{ translateX: 0 }}
+            initial={{ translateX: "100%" }}
+            exit={{ translateX: "100%" }}
+            transition={{ type: "tween" }}
+          >
+            {["About", /* "Contact",*/ "Projects", "Skills", "Links" /*, "Blogs"*/].map((el, index) => (
               <Link href={`/${el.toLowerCase()}`} key={index}>
                 <a onClick={() => setShown(false)} className="text-color4 text-xl bg-color2 rounded-lg p-3 w-[62.5%] mx-4 text-center">
                   {el}
